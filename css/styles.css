@@ -1,0 +1,298 @@
+/* колір основного тексту - #555555 */
+/* колір заголовку -  #303030 */
+/* колір підзаголовку #9DA4BD99 */
+/* вторинний колір тексту #9DA4BD */
+/* білий колір  #FFFFFF; */
+/* акцент #FF6C00 */
+/* вторинний фон  #E5E5E5; */
+
+:root {
+  --primary-text-color: #555555;
+  --secondary-text-color: #9da4bd;
+  --title-color: #303030;
+  --up-title-color: #9da4bd99;
+  --white-color: #ffffff;
+  --accent-color: #ff6c00;
+  --secondary-background-color: #e5e5e5;
+  --our-barbers-background-color: #f7f7f7;
+  --primary-font-family: 'Open Sans';
+  --hero-title-font-family: 'Raleway';
+}
+
+body {
+  background-color: var(--white-color);
+  color: var(--primary-text-color);
+  font-family: var(--primary-font-family), sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/*header*/
+
+.header {
+  background-image: url(../images/hero_image.jpg);
+}
+
+.header .contact {
+  text-decoration: none;
+}
+
+/* site-nav */
+.site-nav .link {
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.site-nav .link:hover,
+.site-nav .link:focus {
+  color: var(--accent-color);
+}
+
+/* list */
+.list {
+  list-style: none;
+}
+
+/* contact */
+.contact {
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact.link:hover,
+.contact.link:focus {
+  color: var(--accent-color);
+}
+
+/* button */
+.button {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border: 1px solid var(--accent-color);
+  border-radius: 25px;
+}
+
+.button:hover,
+.button:focus {
+  color: var(--accent-color);
+}
+
+/* up-title */
+.up-title {
+  color: var(--up-title-color);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* hero */
+.hero {
+  background-color: black;
+}
+
+.hero .title {
+  color: var(--white-color);
+  font-family: var(--hero-title-font-family) sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.hero .text {
+  color: var(--secondary-text-color);
+  font-size: 18px;
+  line-height: 1.67;
+}
+
+/* section */
+.section .up-title {
+  color: var(--title-color);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.section .title {
+  color: var(--title-color);
+  font-size: 42px;
+  line-height: 1.16;
+  letter-spacing: 0.05em;
+}
+
+.section .text {
+  color: var(--primary-text-color);
+  font-size: 18px;
+  line-height: 1.67;
+}
+
+/* section about */
+.section .text-about {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* section-services */
+.section-services {
+  background-image: url(../images/contacts.jpg);
+}
+
+.section-services .up-title {
+  color: var(--secondary-text-color);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+}
+
+.section-services .title {
+  color: var(--white-color);
+  font-size: 42px;
+  line-height: 1.16;
+  letter-spacing: 0.05em;
+}
+
+.section-services .text {
+  color: var(--secondary-text-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.66;
+}
+
+/* section benefits */
+.section.benefits .number {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+}
+
+.section.benefits sup {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.37;
+
+  position: absolute;
+}
+
+.section .text-benefits {
+  color: var(--title-color);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+}
+
+/* section our-barbers */
+.section .our-barbers {
+  background-color: var(--our-barbers-background-color);
+}
+
+.section .title-barbers {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.section .text-barbers {
+  color: var(--accent-color);
+  font-size: 14px;
+  line-height: 19px;
+}
+
+/* section booking */
+.section.booking {
+  background-image: url(../images/contacts.jpg);
+}
+
+.section.booking .title {
+  color: var(--white-color);
+  font-family: var(--hero-title-font-family) sans-serif;
+  font-size: 42px;
+  line-height: 1.16;
+  letter-spacing: 0.05em;
+}
+
+/* section contacts */
+.section.contacts {
+  background-image: url(../images/contacts.jpg);
+}
+
+.section.contacts .title {
+  color: var(--white-color);
+  font-family: var(--hero-title-font-family) sans-serif;
+  font-size: 42px;
+  line-height: 1.16;
+  letter-spacing: 0.05em;
+}
+
+.section.contacts .link {
+  color: var(--secondary-text-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.66;
+  text-decoration: none;
+}
+
+.section.contacts .number {
+  font-weight: 400;
+}
+
+.section.contacts .mail {
+  font-weight: 400;
+  text-decoration-line: underline;
+}
+
+.section.contacts .link:hover,
+.section.contacts .link:focus {
+  color: var(--accent-color);
+}
+
+.section.contacts .subtitle {
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+}
+
+.section.contacts .text {
+  color: var(--secondary-text-color);
+  font-size: 18px;
+  line-height: 1.67;
+}
+
+/* footer */
+
+.footer .copyright {
+  color: var(--secondary-text-color);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+}
+
+.footer .link {
+  color: var(--title-color);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-decoration: none;
+}
+
+.footer .link:hover,
+.footer .link:focus {
+  color: var(--accent-color);
+}
