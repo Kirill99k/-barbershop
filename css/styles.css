@@ -1,11 +1,3 @@
-/* колір основного тексту - #555555 */
-/* колір заголовку -  #303030 */
-/* колір підзаголовку #9DA4BD99 */
-/* вторинний колір тексту #9DA4BD */
-/* білий колір  #FFFFFF; */
-/* акцент #FF6C00 */
-/* вторинний фон  #E5E5E5; */
-
 :root {
   --primary-text-color: #555555;
   --secondary-text-color: #9da4bd;
@@ -15,17 +7,68 @@
   --accent-color: #ff6c00;
   --secondary-background-color: #e5e5e5;
   --our-barbers-background-color: #f7f7f7;
+  --background-services-color: linear-gradient(
+    180deg,
+    #171a24 0%,
+    rgba(23, 26, 36, 0.2) 100%
+  );
   --primary-font-family: 'Open Sans';
   --title-font-family: 'Raleway';
 }
 
-/* ---------------- body ---------------- */
+/* ---------------- utilities ---------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background-color: var(--first-title-color);
   color: var(--primary-text-color);
   font-family: var(--primary-font-family), sans-serif;
   letter-spacing: 0.02em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------------- container ---------------- */
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  outline: 2px solid tomato;
+}
+
+/* ---------------- visually-hidden ---------------- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /* ---------------- list ---------------- */
@@ -40,6 +83,8 @@ body {
 
 /* ---------------- button ---------------- */
 .button {
+  padding: 12px 20px;
+
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
@@ -57,6 +102,11 @@ body {
 }
 
 /* ---------------- section ---------------- */
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 .section-uptitle {
   color: var(--second-title-color);
   font-weight: 600;
@@ -81,10 +131,36 @@ body {
 /* ---------------- header ---------------- */
 
 .header {
-  background-image: url(../images/hero_image.jpg);
+  background-color: teal;
+}
+
+.header .logo {
+  margin-right: 130px;
+}
+
+.main-nav,
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-list {
+  display: flex;
+}
+
+.header-item {
+  display: block;
+}
+
+.header-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .header-nav-link {
+  display: block;
+  padding-top: 52px;
+  padding-bottom: 52px;
+
   color: var(--first-title-color);
   font-weight: 600;
   font-size: 12px;
@@ -101,6 +177,9 @@ body {
 }
 
 .header-contact-link {
+  margin-left: auto;
+  margin-right: 40px;
+
   color: var(--first-title-color);
   font-weight: 600;
   font-size: 12px;
@@ -110,9 +189,9 @@ body {
 }
 
 /* ---------------- hero ---------------- */
-.hero {
-  background-color: black;
-}
+/* .hero {
+  background-image: url(../images/hero_image.jpg);
+} */
 
 .hero-link {
   color: var(--second-title-color);
@@ -126,14 +205,22 @@ body {
   color: var(--accent-color);
 }
 
-.hero-title {
-  font-size: 72px;
-  line-height: 1.2;
-  color: var(--first-title-color);
+.hero-wrap {
+  background-image: url(../images/hero_image.jpg);
+  padding: 272px 100px 208px 100px;
 }
 
 .hero-uptitle {
+  margin-bottom: 20px;
   color: var(--secondary-text-color);
+}
+
+.hero-title {
+  margin-bottom: 20px;
+
+  font-size: 72px;
+  line-height: 1.2;
+  color: var(--first-title-color);
 }
 
 .hero-text {
@@ -146,6 +233,8 @@ body {
 .about {
 }
 .about-uptitle {
+  margin-bottom: 20px;
+
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
@@ -154,6 +243,8 @@ body {
 }
 
 .about-title {
+  margin-bottom: 20px;
+
   font-family: var(--hero-title-font-family), sans-serif;
   font-size: 42px;
   line-height: 1.16;
@@ -161,11 +252,15 @@ body {
   color: var(--second-title-color);
 }
 .about-subtitle {
+  margin-bottom: 20px;
+
   font-size: 18px;
   line-height: 1.66;
 }
 
 .about-text {
+  margin-bottom: 42px;
+
   font-size: 14px;
   line-height: 1.85;
 }
@@ -187,6 +282,13 @@ body {
   color: var(--first-title-color);
 }
 
+.prices-list {
+  border: 1px solid var(--first-title-color);
+  padding: 20px 30px;
+
+  background: var(--background-services-color);
+}
+
 .prices-text {
   color: var(--secondary-text-color);
   font-weight: 400;
@@ -194,14 +296,34 @@ body {
   line-height: 1.66;
 }
 
+.prices-button {
+  display: block;
+  margin: 0 auto;
+}
+
 /* ---------------- benefits ---------------- */
 
 .benefits-uptitle {
+  margin-bottom: 20px;
+
   color: var(--second-title-color);
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
+}
+
+.benefits-title {
+  margin-bottom: 20px;
+}
+
+.benefits-item {
+  padding: 20px 24px;
+  text-align: center;
+
+  width: 170px;
+  height: 133px;
+  border: 1px solid #000000;
 }
 
 .benefits-count {
@@ -217,7 +339,7 @@ body {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.37;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .benefits-list-text {
@@ -228,8 +350,17 @@ body {
 }
 
 /* ---------------- barbers ---------------- */
+.barbers-uptitle {
+  margin-bottom: 20px;
+}
+
+.barbers-title {
+  margin-bottom: 44px;
+}
 
 .barbers-item-title {
+  margin-bottom: 8px;
+
   font-weight: 400;
   font-size: 18px;
   line-height: 1.4;
@@ -237,6 +368,8 @@ body {
 }
 
 .barbers-item-text {
+  margin-bottom: 30px;
+
   color: var(--accent-color);
   font-size: 14px;
   line-height: 1.35;
@@ -244,6 +377,11 @@ body {
 }
 
 /* ---------------- gallery ---------------- */
+
+.gallery-uptitle {
+  display: inline-block;
+  margin-bottom: 44px;
+}
 
 /* ---------------- booking ---------------- */
 
@@ -263,9 +401,23 @@ body {
 }
 
 .contacts-title {
+  margin-bottom: 40px;
+
   color: var(--first-title-color);
   font-size: 42px;
   line-height: 1.16;
+}
+
+.contacts-list {
+  font-style: normal;
+}
+
+.contacts-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.contacts-item:last-child {
+  margin-bottom: 70px;
 }
 
 .contacts-link {
@@ -291,6 +443,8 @@ body {
 }
 
 .contacts-schedule-title {
+  margin-bottom: 20px;
+
   color: var(--first-title-color);
   font-weight: 600;
   font-size: 11px;
@@ -302,7 +456,12 @@ body {
   color: var(--up-title-color);
 }
 
-/* footer */
+/* ---------------- footer ---------------- */
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+}
 
 .footer-text {
   color: var(--secondary-text-color);
@@ -311,7 +470,20 @@ body {
   line-height: 1.36;
 }
 
+.footer-list {
+  display: flex;
+  margin-left: auto;
+}
+
+.footer-item {
+  margin-left: 40px;
+}
+
 .footer-link {
+  display: block;
+  padding-top: 52px;
+  padding-bottom: 52px;
+
   color: var(--second-title-color);
   font-weight: 600;
   font-size: 11px;
