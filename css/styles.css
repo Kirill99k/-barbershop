@@ -83,8 +83,12 @@ img {
 
 /* ---------------- button ---------------- */
 .button {
-  padding: 12px 20px;
+  /* padding: 12px 20px; */
 
+  background-color: transparent;
+  color: var(--first-title-color);
+  min-width: 160px;
+  height: 40px;
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
@@ -135,26 +139,31 @@ img {
 }
 
 .header .logo {
-  margin-right: 130px;
+  margin-right: 131px;
 }
 
-.main-nav,
+.header-container,
 .header-nav {
   display: flex;
   align-items: center;
 }
 
+.header-nav {
+  margin-right: auto;
+}
+
 .header-nav-list {
   display: flex;
+  gap: 30px;
 }
 
 .header-item {
   display: block;
 }
 
-.header-item:not(:last-child) {
+/* .header-item:not(:last-child) {
   margin-right: 30px;
-}
+} */
 
 .header-nav-link {
   display: block;
@@ -177,7 +186,6 @@ img {
 }
 
 .header-contact-link {
-  margin-left: auto;
   margin-right: 40px;
 
   color: var(--first-title-color);
@@ -193,6 +201,14 @@ img {
   background-image: url(../images/hero_image.jpg);
 } */
 
+.hero-container {
+  display: flex;
+}
+
+.hero-list {
+  width: 100px;
+}
+
 .hero-link {
   color: var(--second-title-color);
   font-weight: 600;
@@ -206,6 +222,8 @@ img {
 }
 
 .hero-wrap {
+  flex-grow: 1;
+
   background-image: url(../images/hero_image.jpg);
   padding: 272px 100px 208px 100px;
 }
@@ -227,11 +245,26 @@ img {
   color: var(--secondary-text-color);
   font-size: 18px;
   line-height: 1.67;
+  max-width: 357px;
 }
 
 /* ---------------- about ---------------- */
-.about {
+/* .about {} */
+
+.about-list {
+  display: flex;
+  gap: 30px;
 }
+
+.about-container {
+  display: flex;
+  gap: 30px;
+}
+
+.about-wrap {
+  max-width: 470px;
+}
+
 .about-uptitle {
   margin-bottom: 20px;
 
@@ -265,12 +298,18 @@ img {
   line-height: 1.85;
 }
 
+.about-button {
+  color: var(--second-title-color);
+}
+
 /* ---------------- prices ---------------- */
 .prices {
   background-image: url(../images/contacts.jpg);
 }
 
 .prices-uptitle {
+  margin-bottom: 20px;
+
   color: var(--secondary-text-color);
   font-weight: 600;
   font-size: 11px;
@@ -279,14 +318,32 @@ img {
 }
 
 .prices-title {
+  margin-bottom: 44px;
+
   color: var(--first-title-color);
+}
+
+.prices-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 .prices-list {
   border: 1px solid var(--first-title-color);
   padding: 20px 30px;
 
+  width: calc((100% - 30px) / 2);
   background: var(--background-services-color);
+}
+
+.prices-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.prices-item:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .prices-text {
@@ -359,12 +416,22 @@ img {
 }
 
 .barbers-item-title {
+  margin-top: 30px;
   margin-bottom: 8px;
 
   font-weight: 400;
   font-size: 18px;
   line-height: 1.4;
   text-align: center;
+}
+
+.barbers-list {
+  display: flex;
+  gap: 30px;
+}
+
+.barbers-item {
+  width: calc((100% - 60px) / 3);
 }
 
 .barbers-item-text {
@@ -381,6 +448,15 @@ img {
 .gallery-uptitle {
   display: inline-block;
   margin-bottom: 44px;
+}
+
+.gallery-list {
+  display: flex;
+  gap: 30px;
+}
+
+.gallery-item {
+  width: calc((100% - 90px) / 4);
 }
 
 /* ---------------- booking ---------------- */
