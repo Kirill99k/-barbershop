@@ -53,7 +53,7 @@ img {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  outline: 2px solid tomato;
+  /* outline: 2px solid tomato; */
 }
 
 /* ---------------- visually-hidden ---------------- */
@@ -222,10 +222,13 @@ img {
 }
 
 .hero-wrap {
-  flex-grow: 1;
-
-  background-image: url(../images/hero_image.jpg);
+  background-image: linear-gradient(
+      rgba(25, 28, 38, 0.2),
+      rgba(25, 28, 38, 0.2)
+    ),
+    url(../images/hero_image.jpg);
   padding: 272px 100px 208px 100px;
+  flex-grow: 1;
 }
 
 .hero-uptitle {
@@ -407,6 +410,10 @@ img {
 }
 
 /* ---------------- barbers ---------------- */
+.barbers.section {
+  background-color: var(--our-barbers-background-color);
+}
+
 .barbers-uptitle {
   margin-bottom: 20px;
 }
@@ -441,6 +448,37 @@ img {
   font-size: 14px;
   line-height: 1.35;
   text-align: center;
+}
+
+.barbers-soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.barbers-soc-item {
+  width: 44px;
+  height: 44px;
+}
+
+.barbers-soc-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--first-title-color);
+  color: var(--second-title-color);
+}
+
+.barbers-soc-ikon {
+  fill: currentColor;
+}
+
+.barbers-soc-link:hover {
+  color: var(--accent-color);
 }
 
 /* ---------------- gallery ---------------- */
