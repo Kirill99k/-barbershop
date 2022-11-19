@@ -43,7 +43,7 @@
               <a class="header-nav-link link" href="#barbers">Barbers</a>
             </li>
             <li class="header-item">
-              <a class="header-nav-link link" href="#">Contacts</a>
+              <a class="header-nav-link link" href="#contact">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -54,7 +54,7 @@
         >
           +38 044 111 11 11</a
         >
-        <button class="header-button button" type="button">
+        <button class="header-button button" type="button" data-modal-open>
           Online-booking
         </button>
       </div>
@@ -64,26 +64,28 @@
       <!-- hero -->
       <section class="hero">
         <div class="container hero-container">
-          <ul class="hero-list list">
-            <li class="hero-item">
-              <a
-                class="hero-link link"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Instagram
-              </a>
-            </li>
-            <li class="hero-item">
-              <a
-                class="hero-link link"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Youtube
-              </a>
-            </li>
-          </ul>
+          <div class="soc-list">
+            <ul class="hero-list list">
+              <li class="hero-item">
+                <a
+                  class="hero-link link"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Instagram
+                </a>
+              </li>
+              <li class="hero-item">
+                <a
+                  class="hero-link link"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Youtube
+                </a>
+              </li>
+            </ul>
+          </div>
           <div class="hero-wrap">
             <p class="hero-uptitle section-uptitle">
               A hair salon for men in Kyiv
@@ -132,7 +134,7 @@
               always "on the same wave" with clients. Therefore, we are always
               ready to improve everyone who comes to us!
             </p>
-            <button type="button" class="about-button button">
+            <button type="button" class="about-button button" data-modal-open>
               ONLINE-BOOKING
             </button>
           </div>
@@ -184,7 +186,7 @@
               </li>
             </ul>
           </div>
-          <button type="button" class="prices-button button">
+          <button type="button" class="prices-button button" data-modal-open>
             ONLINE-BOOKING
           </button>
         </div>
@@ -195,19 +197,33 @@
         <div class="container benefits-container">
           <ul class="benefits-list list">
             <li class="benefits-item">
-              <span class="benefits-count">600</span>
+              <span class="benefits-count"
+                >600
+                <svg class="plus-icon">
+                  <use href="./images/icons.svg#plus"></use>
+                </svg>
+              </span>
               <p class="benefits-list-text">Satisfied customers per day</p>
             </li>
             <li class="benefits-item">
-              <span class="benefits-count">50</span>
+              <span class="benefits-count"
+                >50<svg class="plus-icon">
+                  <use href="./images/icons.svg#plus"></use></svg
+              ></span>
               <p class="benefits-list-text">Awards for excellent service</p>
             </li>
             <li class="benefits-item">
-              <span class="benefits-count">20</span>
+              <span class="benefits-count"
+                >20<svg class="plus-icon">
+                  <use href="./images/icons.svg#plus"></use></svg
+              ></span>
               <p class="benefits-list-text">Kyiv’s best barbers</p>
             </li>
             <li class="benefits-item">
-              <span class="benefits-count">100</span>
+              <span class="benefits-count"
+                >100<svg class="plus-icon">
+                  <use href="./images/icons.svg#plus"></use></svg
+              ></span>
               <p class="benefits-list-text">Gifts for regular customers</p>
             </li>
           </ul>
@@ -388,7 +404,7 @@
       </section>
 
       <!-- contact-wrap -->
-      <div class="contact-wrap">
+      <div class="contact-wrap" id="contact">
         <div class="container">
           <!-- online -->
           <section class="online">
@@ -464,5 +480,17 @@
         </ul>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="close-button" type="button" data-modal-close>
+          <svg class="close-icon" width="11" height="11">
+            <use href="./images/icons.svg#vector"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>

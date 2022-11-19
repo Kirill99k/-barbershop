@@ -7,6 +7,10 @@
   --accent-color: #ff6c00;
   --secondary-background-color: #e5e5e5;
   --our-barbers-background-color: #f7f7f7;
+  --modal-background-rgba: rgba(0, 0, 0, 0.2);
+  --modal-box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 1px rgb(0 0 0 / 14%),
+    0 2px 1px rgb(0 0 0 / 20%);
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --primary-font-family: 'Open Sans';
   --title-font-family: 'Raleway';
 }
@@ -48,7 +52,7 @@ img {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  outline: 2px solid tomato;
+  /* outline: 2px solid tomato; */
 }
 
 /* ---------------- visually-hidden ---------------- */
@@ -93,6 +97,7 @@ img {
   border: 1px solid var(--accent-color);
   border-radius: 25px;
   cursor: pointer;
+  transition: color 250ms var(--timing-function);
 }
 
 .button:hover,
@@ -170,13 +175,24 @@ img {
   display: block;
   padding-top: 52px;
   padding-bottom: 52px;
-
   color: var(--first-title-color);
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.1em;
   text-decoration: none;
+  transition: color 250ms var(--timing-function);
+}
+
+.header-contact-link {
+  margin-right: 40px;
+  color: var(--first-title-color);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 250ms var(--timing-function);
 }
 
 .header-nav-link:hover,
@@ -186,25 +202,33 @@ img {
   color: var(--accent-color);
 }
 
-.header-contact-link {
-  margin-right: 40px;
-
-  color: var(--first-title-color);
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
 /* ---------------- hero ---------------- */
 
 .hero-container {
   display: flex;
 }
 
-.hero-list {
+.soc-list {
   width: 100px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 27px;
+  padding-bottom: 40px;
+}
+
+.hero-list {
+  display: flex;
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: bottom left;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-list::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: var(--second-title-color);
 }
 
 .hero-link {
@@ -212,6 +236,7 @@ img {
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
+  transition: color 250ms var(--timing-function);
 }
 
 .hero-link:hover,
@@ -440,21 +465,29 @@ img {
 }
 
 .benefits-count {
+  position: relative;
+  display: block;
   color: var(--second-title-color);
   font-weight: 700;
   font-size: 42px;
   line-height: 1.35;
   letter-spacing: 0.05em;
-  display: flex;
 }
 
-.benefits-count::after {
+.benefits .plus-icon {
+  position: absolute;
+  fill: var(--accent-color);
+  width: 13px;
+  height: 22px;
+}
+
+/* .benefits-count::after {
   content: '+';
   color: var(--accent-color);
   font-weight: 600;
   font-size: 16px;
   line-height: 1.37;
-}
+} */
 
 /* .benefits-plus {
   color: var(--accent-color);
@@ -540,6 +573,7 @@ img {
   border-radius: 50%;
   background-color: var(--first-title-color);
   color: var(--second-title-color);
+  transition: color 250ms var(--timing-function);
 }
 
 .barbers-soc-icon {
@@ -597,7 +631,6 @@ img {
 
 /* ---------------- contacts ---------------- */
 .contacts {
-  /* background-image: url(../images/contacts.jpg); */
   width: calc(50% - 15px);
   padding-top: 130px;
   padding-bottom: 120px;
@@ -630,6 +663,7 @@ img {
   font-size: 18px;
   line-height: 1.66;
   text-decoration: none;
+  transition: color 250ms var(--timing-function);
 }
 
 .contacts-link.number {
@@ -692,9 +726,76 @@ img {
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
+  transition: color 250ms var(--timing-function);
 }
 
 .footer-link:hover,
 .footer-link:focus {
   color: var(--accent-color);
+}
+
+/* ---------------- Modal window ---------------- */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-background-rgba);
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function),
+    visibility 250ms var(--timing-function);
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  padding: 40px;
+  min-width: 528px;
+  min-height: 540px;
+  background-color: var(--first-title-color);
+  box-shadow: var(--modal-box-shadow);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: color 250ms var(--timing-function),
+    fill 250ms var(--timing-function);
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: var(--accent-color);
+}
+
+.close-icon {
+  fill: currentColor;
 }
