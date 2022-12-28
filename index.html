@@ -409,7 +409,38 @@
           <!-- online -->
           <section class="online">
             <h2 class="online-title section-title">Online-booking</h2>
-            <button type="button" class="online-button button">send</button>
+            <form class="online-form">
+              <div class="online-wrap">
+                <input
+                  type="text"
+                  class="online-input online-item"
+                  name="online-name"
+                  id="online-name"
+                  placeholder=" "
+                />
+                <label for="online-name" class="online-label">Name*</label>
+              </div>
+              <div class="online-wrap">
+                <input
+                  type="tel"
+                  class="online-input online-item"
+                  name="online-tel"
+                  id="online-tel"
+                  placeholder=" "
+                />
+                <label for="online-tel" class="online-label">Phone*</label>
+              </div>
+              <div class="online-message-wrap">
+                <textarea
+                  name="online-message"
+                  id="online-message"
+                  class="online-message online-item"
+                  placeholder=" "
+                ></textarea>
+                <label for="online-message" class="online-label">Message</label>
+              </div>
+            </form>
+            <button type="submit" class="online-button button">send</button>
           </section>
 
           <!-- contacts -->
@@ -481,6 +512,7 @@
       </div>
     </footer>
 
+    <!-- modal -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="close-button" type="button" data-modal-close>
@@ -488,6 +520,16 @@
             <use href="./images/icons.svg#vector"></use>
           </svg>
         </button>
+
+        <div class="modal-field">
+          <input
+            type="checkbox"
+            name="policy"
+            class="modal-check visually-hidden"
+            id="policy"
+          />
+          <label for="policy" class="check-text">Політика користування</label>
+        </div>
       </div>
     </div>
 
