@@ -1,0 +1,35 @@
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.section-uptitle {
+  color: var(--second-title-color);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  &::before {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background-color: currentColor;
+  }
+}
+
+.section-title {
+  font-family: var(--title-font-family) sans-serif;
+  color: var(--second-title-color);
+  font-size: 42px;
+  line-height: 1.16;
+  letter-spacing: 0.05em;
+}
+
+.section-text {
+  font-size: 18px;
+  line-height: 1.67;
+}

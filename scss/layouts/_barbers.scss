@@ -1,0 +1,71 @@
+.barbers.section {
+  background-color: var(--our-barbers-background-color);
+}
+
+.barbers-uptitle {
+  margin-bottom: 20px;
+}
+
+.barbers-title {
+  margin-bottom: 44px;
+}
+
+.barbers-item-title {
+  margin-top: 30px;
+  margin-bottom: 8px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.barbers-list {
+  display: flex;
+  gap: 30px;
+}
+
+.barbers-item {
+  width: calc((100% - 60px) / 3);
+}
+
+.barbers-item-text {
+  margin-bottom: 30px;
+
+  color: var(--accent-color);
+  font-size: 14px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.barbers-soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.barbers-soc-item {
+  width: 44px;
+  height: 44px;
+}
+
+.barbers-soc-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--first-title-color);
+  color: var(--second-title-color);
+  transition: color 250ms var(--timing-function);
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}
+
+.barbers-soc-icon {
+  fill: currentColor;
+}

@@ -1,0 +1,50 @@
+.about-list {
+  display: flex;
+  gap: 30px;
+}
+
+.about-container {
+  display: flex;
+  gap: 30px;
+}
+
+.about-wrap {
+  max-width: 470px;
+}
+
+.about-uptitle {
+  margin-bottom: 20px;
+
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+  color: var(--second-title-color);
+}
+
+.about-title {
+  margin-bottom: 20px;
+
+  font-family: var(--hero-title-font-family), sans-serif;
+  font-size: 42px;
+  line-height: 1.16;
+  letter-spacing: 0.05em;
+  color: var(--second-title-color);
+}
+.about-subtitle {
+  margin-bottom: 20px;
+
+  font-size: 18px;
+  line-height: 1.66;
+}
+
+.about-text {
+  margin-bottom: 42px;
+
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.about-button {
+  color: var(--second-title-color);
+}
